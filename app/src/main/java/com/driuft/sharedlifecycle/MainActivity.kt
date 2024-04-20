@@ -51,21 +51,81 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        with (_sharedPreferences.edit()) {
+            putString(getString(R.string.current_lifecycle_state), "onResume")
+            apply()
+        }
+        // Read the state
+        val currentState = _sharedPreferences.getString(
+            getString(R.string.current_lifecycle_state),
+            resources.getString(R.string.default_state)
+        ) ?: resources.getString(R.string.default_state)
+        Log.d("Lifecycle: ", currentState)
+        // Toast the state
+        Toast.makeText(this, currentState, Toast.LENGTH_SHORT).show()
     }
 
     override fun onPause() {
         super.onPause()
+        with (_sharedPreferences.edit()) {
+            putString(getString(R.string.current_lifecycle_state), "onPause")
+            apply()
+        }
+        // Read the state
+        val currentState = _sharedPreferences.getString(
+            getString(R.string.current_lifecycle_state),
+            resources.getString(R.string.default_state)
+        ) ?: resources.getString(R.string.default_state)
+        Log.d("Lifecycle: ", currentState)
+        // Toast the state
+        Toast.makeText(this, currentState, Toast.LENGTH_SHORT).show()
     }
 
     override fun onStop() {
         super.onStop()
+        with (_sharedPreferences.edit()) {
+            putString(getString(R.string.current_lifecycle_state), "onStop")
+            apply()
+        }
+        // Read the state
+        val currentState = _sharedPreferences.getString(
+            getString(R.string.current_lifecycle_state),
+            resources.getString(R.string.default_state)
+        ) ?: resources.getString(R.string.default_state)
+        Log.d("Lifecycle: ", currentState)
+        // Toast the state
+        Toast.makeText(this, currentState, Toast.LENGTH_SHORT).show()
     }
 
     override fun onRestart() {
         super.onRestart()
+        with (_sharedPreferences.edit()) {
+            putString(getString(R.string.current_lifecycle_state), "onRestart")
+            apply()
+        }
+        // Read the state
+        val currentState = _sharedPreferences.getString(
+            getString(R.string.current_lifecycle_state),
+            resources.getString(R.string.default_state)
+        ) ?: resources.getString(R.string.default_state)
+        Log.d("Lifecycle: ", currentState)
+        // Toast the state
+        Toast.makeText(this, currentState, Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        with (_sharedPreferences.edit()) {
+            putString(getString(R.string.current_lifecycle_state), "onDestroy")
+            apply()
+        }
+        // Read the state
+        val currentState = _sharedPreferences.getString(
+            getString(R.string.current_lifecycle_state),
+            resources.getString(R.string.default_state)
+        ) ?: resources.getString(R.string.default_state)
+        Log.d("Lifecycle: ", currentState)
+        // Toast the state
+        Toast.makeText(this, currentState, Toast.LENGTH_SHORT).show()
     }
 }
